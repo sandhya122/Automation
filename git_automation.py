@@ -5,11 +5,13 @@ from selenium.webdriver.common.by import By
 driver= webdriver.Chrome('/usr/local/bin/chromedriver')
 
 #Challenge #1: Repository Creation
+email= 'systemtest941@gmail.com'
+password = 'github@1234'
 
 driver.get("https://github.com/")
 driver.find_element(By.LINK_TEXT, 'Sign in').click()
-driver.find_element(By.ID, 'login_field').send_keys('systemtest941@gmail.com')
-driver.find_element(By.ID, 'password').send_keys('github@1234')
+driver.find_element(By.ID, 'login_field').send_keys(email)
+driver.find_element(By.ID, 'password').send_keys(password)
 driver.find_element(By.XPATH,'//*[@class="btn btn-primary btn-block"]').click()
 
 driver.find_element(By.XPATH, '//*[@class="dropdown-caret"]').click()
